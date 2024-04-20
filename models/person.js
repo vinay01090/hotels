@@ -14,7 +14,7 @@ const personSchema=new mongoose.Schema({
         require:true
     },
     mobile:{
-        type:String,
+        type:Number,
         require:true
     },
     email:{
