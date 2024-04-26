@@ -2,14 +2,13 @@ const mongoose=require('mongoose');
 require('dotenv').config(); 
 
 const mongoURL=process.env.LOCAL_DB_URL; 
-// const mongoURL=process.env.LOBDB_URL; 
-
+// const mongoURL=process.env.DB_URL; 
 mongoose.connect(mongoURL); 
 
 const db=mongoose.connection;  
 
 db.on('connected',()=>{
-    console.log("Connected to MongoDB server"); 
+    console.log('Connected to MongoDB server'); 
 }); 
 
 db.on('disconnected',()=>{
