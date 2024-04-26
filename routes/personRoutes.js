@@ -2,6 +2,7 @@ const express=require('express');
 const person = require('./../models/person');
 const router=express.Router(); 
 
+// create
 router.post('/',async(req,res)=>{
     try{
         const data=req.body; 
@@ -18,6 +19,7 @@ router.post('/',async(req,res)=>{
     }
 });
 
+//read
 router.get('/',async(req,res)=>{
     try{
         const data=await person.find(); 
@@ -30,6 +32,7 @@ router.get('/',async(req,res)=>{
     }
 }); 
 
+//paramaterised read
 router.get('/:workType',async(req,res)=>{
     try{
         const workType=req.params.workType; 
@@ -48,6 +51,7 @@ router.get('/:workType',async(req,res)=>{
     }
 }); 
 
+//update
 router.put('/:id',async(req,res)=>{
     try{
         const personId=req.params.id; 
@@ -67,6 +71,7 @@ router.put('/:id',async(req,res)=>{
     }
 }); 
 
+//delete
 router.delete('/:id',async(req,res)=>{
     try{
         const personId=req.params.id; 
@@ -84,6 +89,5 @@ router.delete('/:id',async(req,res)=>{
     }
 }); 
 
-//comment added for testing
-
+//export router to access from outside.
 module.exports=router; 

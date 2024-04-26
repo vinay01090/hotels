@@ -20,6 +20,14 @@ const menuSchema=new mongoose.Schema({
     offer:{
         type:String,
 
+    },
+    username:{
+        require:true,
+        type:String
+    },
+    password:{
+        require:true,
+        type:String
     }
 }); 
 
