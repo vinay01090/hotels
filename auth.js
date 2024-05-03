@@ -5,6 +5,7 @@ const Person = require('./models/person.js');
 
 passport.use(new LocalStrategy(async(username,password,done)=>{
     //authentication logic here
+
     try {
         console.log('Received credendials:',username,password);
         const user = await Person.findOne({username});
